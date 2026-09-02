@@ -8,7 +8,7 @@ it works.
 ```
 index.html             Home
 firm.html              The Firm
-attorneys.html         Attorneys
+attorneys.html         Attorneys and the senior paralegal team
 practice-areas.html    All practice areas, each explained in full
 detained.html          Immigration Detainee Representation
 contact.html           Contact, enquiry form and the four offices
@@ -23,36 +23,69 @@ BRAND.md               How the identity manual maps onto the site
 
 ## Before this goes live
 
-Four things still need the firm's own information. Each is marked with a
-`TODO` comment in the file named.
+Everything below is marked with a `TODO(May & May)` comment in the file named.
+Search the pages for `TODO(May & May)` to find them all.
 
-1. **Street addresses for three offices.** The Doral address is in from the
-   letterhead. Tampa Bay, Indiana and Kentucky currently show the region only
-   and are tagged "By appointment", which is truthful as it stands — but if
-   those offices have street addresses, add them. Each spot is marked in the
-   HTML with a `TODO(May & May)` comment — they sit in the office cards on
-   `contact.html` and `index.html`, and in the footer of every page. Search
-   for `TODO(May & May)` to find all of them.
-2. **The enquiry form has no endpoint.** `contact.html`'s `<form>` has
+1. **The enquiry form has no endpoint.** `contact.html`'s `<form>` has
    `action="REPLACE_WITH_FORM_ENDPOINT"`. Until that is replaced, the form
    falls back to opening the visitor's email client with the answers filled
    in, so no enquiry is lost — but it is a poor experience. Replace the
    action with a form service (Formspree, Netlify Forms, Basin) or your
    host's own handler. The fields post as `name`, `phone`, `email`,
    `preferred_language`, `matter`, `office`, `detained`, `message`.
-3. **Confirm the phone number and email.** Both are taken from the business
-   card in the identity manual: `(502) 229-7806` and
-   `Liam@maylaw-firm.com`. If the firm would rather publish a general
-   address such as `info@maylaw-firm.com`, or a Florida number for the
-   Florida offices, change it — search for `502` and for `maylaw-firm.com`.
-4. **Add the second attorney.** `attorneys.html` has William Harvey "Liam"
-   May. A ready-to-fill template for further attorneys sits just below his
-   card, commented out, with instructions.
+2. **Confirm the Bradenton postal code.** The letterhead reads
+   `1201 Sixth Avenue West, Bradenton, Florida 32405`, transcribed here as
+   written — but 32405 is a Panama City code and Bradenton uses 34205. It
+   appears in the office card on `contact.html` and `index.html` and in the
+   footer of every page.
+3. **Fill out Bill May's biography.** His card on `attorneys.html` currently
+   carries his role and his degrees only. Practice focus, bar admissions and
+   years in practice are all worth adding. Keep the English and Spanish
+   paragraphs in step.
+4. **Add the paralegals' surnames.** The senior paralegals are listed by
+   first name and firm address, as the letterhead lists them. Surnames, and
+   a line of detail for each person, would make the section stronger.
 
 Nothing on the site invents a credential, a case result, or a person. The
 three achievements on the record band are stated qualitatively, as given, with
 the "prior results do not guarantee a similar outcome" notice beside them and
 in the footer of every page.
+
+## Contact details, and where they come from
+
+| Detail | Value | Source |
+|---|---|---|
+| Firm number — voice, SMS and WhatsApp | (727) 269-3797 | The firm |
+| General email | info@maylaw-firm.com | The firm |
+| Miami-Dade (principal) | 8200 NW 41st St., Suite 470, Doral, FL 33166 | Letterhead |
+| Tampa Bay (by appointment) | 1201 Sixth Ave. W., Bradenton, FL 32405 | Letterhead — see item 2 above |
+| Indiana (by appointment) | 3815 River Crossing Pkwy., Indianapolis, IN 46240 | Letterhead |
+| Kentucky (by appointment) | 411 West Broadway, Frankfort, KY 40601 | Letterhead |
+
+Two details on the letterhead are deliberately **not** published: Liam's
+direct line (502-229-7806) and the second Miami line (305-675-6420). Only the
+727 number appears anywhere on the site. To change any of this, search the
+pages for `727`, for `maylaw-firm.com`, or for the street address.
+
+The identity manual's business card carries an older Doral address —
+2656 NW 97th Ave., 33172. The site uses the letterhead's 8200 NW 41st St.
+If the older one is still current, that is the one to change.
+
+## The WhatsApp bubble
+
+A single fixed affordance in the bottom-right corner of every page, linking to
+`https://wa.me/17272693797` — the same firm number, opened in WhatsApp. It
+reads "Contact us on WhatsApp now!" in English and
+"¡Contáctenos por WhatsApp ahora!" in Spanish, and the label stays visible at
+every screen width.
+
+It is drawn in the brand crimson rather than WhatsApp's own green, so it sits
+inside the identity manual's palette; the WhatsApp glyph carries the
+recognition. If you would rather have the familiar green, change `background`
+in the `.whatsapp-bubble` rule in `assets/css/site.css` to `#25D366` and its
+`color` to `#FFFFFF` — nothing else needs to move.
+
+WhatsApp also appears in the "Reach us directly" card on `contact.html`.
 
 ## Editing the content
 

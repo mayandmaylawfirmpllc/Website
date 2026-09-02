@@ -192,6 +192,11 @@ h3 { font-size: var(--fs-h3); }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
 
+/* Four people: 1, then 2, then 4 across — never three with an orphan. */
+.grid-team { grid-template-columns: 1fr; }
+@media (min-width: 560px)  { .grid-team { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .grid-team { grid-template-columns: repeat(4, 1fr); } }
+
 .split {
   display: grid;
   gap: clamp(2rem, 1rem + 4vw, 4.5rem);
@@ -1039,3 +1044,72 @@ h3 { font-size: var(--fs-h3); }
   border-color: rgba(255, 255, 255, .16);
 }
 .figure-doc.is-invert { --c-text-muted: var(--c-text-invert-muted); }
+
+/* --- 12. WhatsApp bubble ------------------------------------------------
+   One persistent affordance, bottom right, on every page. Sits below the
+   sticky header in the stack so it never covers navigation, and shrinks to
+   the glyph alone on very narrow screens rather than crowding the page —
+   the label stays available to screen readers via aria-label either way.
+   ----------------------------------------------------------------------- */
+.whatsapp-bubble {
+  position: fixed;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  max-width: calc(100vw - (var(--gutter) * 2));
+  padding: .7rem 1.15rem .7rem .9rem;
+  background: var(--c-crimson-500);
+  color: var(--c-text-invert);
+  /* A hairline of cream so the crimson pill still separates from the
+     burgundy hero and mastheads it floats over. */
+  border: 1px solid rgba(252, 247, 242, .38);
+  border-radius: 999px;
+  box-shadow: 0 10px 28px -10px rgba(69, 22, 30, .55);
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease),
+              box-shadow var(--dur) var(--ease);
+}
+.whatsapp-bubble:hover {
+  background: var(--c-burgundy-700);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -10px rgba(69, 22, 30, .62);
+}
+.whatsapp-bubble:active { transform: none; }
+
+.whatsapp-bubble-icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  fill: currentColor;
+}
+.whatsapp-bubble-text { display: block; }
+
+/* The label stays visible at every width — it is the whole point of the
+   affordance. On a narrow screen it scales down and is allowed to wrap onto
+   a second line rather than stretching into a full-width bar. */
+@media (max-width: 560px) {
+  .whatsapp-bubble {
+    max-width: 15.5rem;
+    padding: .6rem .95rem .6rem .75rem;
+    gap: .5rem;
+    font-size: .82rem;
+    line-height: 1.25;
+    border-radius: 1.6rem;
+  }
+  .whatsapp-bubble-icon { width: 22px; height: 22px; }
+}
+
+/* Keep the last of the footer clear of the floating bubble. */
+.site-footer { padding-bottom: 4.5rem; }
+@media (min-width: 561px) { .site-footer { padding-bottom: 3.25rem; } }
+
+@media print {
+  .whatsapp-bubble { display: none; }
+}
