@@ -136,7 +136,8 @@
         }
       });
 
-      var wide = window.matchMedia('(min-width: 1041px)');
+      // Must match the drawer breakpoint in site.css.
+      var wide = window.matchMedia('(min-width: 1181px)');
       var onWide = function (mq) { if (mq.matches) setNav(false); };
       if (wide.addEventListener) wide.addEventListener('change', onWide);
       else if (wide.addListener) wide.addListener(onWide);

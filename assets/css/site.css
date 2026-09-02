@@ -441,7 +441,7 @@ h3 { font-size: var(--fs-h3); }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 1040px) {
+@media (max-width: 1180px) {
   .nav-toggle { display: block; order: 3; }
   .header-actions .btn-pay { display: none; }
 
@@ -475,7 +475,7 @@ h3 { font-size: var(--fs-h3); }
   .nav-drawer-cta .btn { width: 100%; }
   body[data-nav-open="true"] { overflow: hidden; }
 }
-@media (min-width: 1041px) {
+@media (min-width: 1181px) {
   .nav-drawer-cta { display: none; }
 }
 
@@ -1061,13 +1061,16 @@ h3 { font-size: var(--fs-h3); }
   gap: .6rem;
   max-width: calc(100vw - (var(--gutter) * 2));
   padding: .7rem 1.15rem .7rem .9rem;
-  background: var(--c-crimson-500);
-  color: var(--c-text-invert);
-  /* A hairline of cream so the crimson pill still separates from the
-     burgundy hero and mastheads it floats over. */
-  border: 1px solid rgba(252, 247, 242, .38);
+  /* WhatsApp's own green, so the bubble is recognised at a glance. Dark text
+     on it, not white: white gives 2:1 and fails, whereas the brand's text
+     colour reads at 8:1 — and dark-on-green is what WhatsApp itself uses.
+     The hairline keeps the pill defined against the cream page ground, which
+     the green alone does not separate from. */
+  background: #25D366;
+  color: var(--c-text);
+  border: 1px solid rgba(11, 20, 26, .22);
   border-radius: 999px;
-  box-shadow: 0 10px 28px -10px rgba(69, 22, 30, .55);
+  box-shadow: 0 10px 28px -10px rgba(11, 60, 30, .45);
   font-family: var(--font-sans);
   font-size: var(--fs-small);
   font-weight: 600;
@@ -1077,9 +1080,9 @@ h3 { font-size: var(--fs-h3); }
               box-shadow var(--dur) var(--ease);
 }
 .whatsapp-bubble:hover {
-  background: var(--c-burgundy-700);
+  background: #1EBE5B;
   transform: translateY(-2px);
-  box-shadow: 0 14px 32px -10px rgba(69, 22, 30, .62);
+  box-shadow: 0 14px 32px -10px rgba(11, 60, 30, .55);
 }
 .whatsapp-bubble:active { transform: none; }
 
@@ -1113,3 +1116,51 @@ h3 { font-size: var(--fs-h3); }
 @media print {
   .whatsapp-bubble { display: none; }
 }
+
+/* --- 13. Blog ----------------------------------------------------------- */
+.post-list { display: grid; gap: 1px; background: var(--c-line); border: 1px solid var(--c-line); }
+@media (min-width: 720px)  { .post-list { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1060px) { .post-list { grid-template-columns: repeat(3, 1fr); } }
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--c-surface);
+  padding: clamp(1.5rem, 1rem + 1.4vw, 2.15rem);
+  transition: background var(--dur) var(--ease);
+}
+.post-card:hover { background: var(--c-stone-100); }
+.post-card h3 { text-wrap: pretty; }
+.post-card .post-lead { font-size: var(--fs-small); color: var(--c-text-muted); flex: 1; }
+.post-card .link-arrow { margin-top: var(--space-2); }
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem .8rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-kicker);
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+.post-meta .post-cat { color: var(--c-accent-text); font-weight: 700; }
+.post-meta.is-invert { margin-bottom: var(--space-4); }
+
+/* An article is one column of running text; subheads break it up. */
+.post-body > * + * { margin-top: var(--space-5); }
+.post-body h3 {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--c-line);
+  font-size: var(--fs-h3);
+}
+.post-body h3 + p { margin-top: var(--space-4); }
+.post-body p { max-width: var(--measure); }
+
+/* The catch-all tile carries a message rather than a service, so it takes the
+   remaining width of the row instead of sitting alone in it. */
+@media (min-width: 1000px) { .practice-card.is-cta.is-wide { grid-column: span 2; } }

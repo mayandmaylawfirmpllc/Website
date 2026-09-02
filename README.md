@@ -9,8 +9,11 @@ it works.
 index.html             Home
 firm.html              The Firm
 attorneys.html         Attorneys and the senior paralegal team
-practice-areas.html    All practice areas, each explained in full
+practice-areas.html    Immigration, each area explained in full
 detained.html          Immigration Detainee Representation
+other-services.html    Injury, family, estate, criminal, business, real estate
+blog.html              Blog index
+blog-<slug>.html       One file per article
 contact.html           Contact, enquiry form and the four offices
 404.html               Not-found page
 assets/css/brand.css   Colour, type and spacing tokens — the file to edit to re-skin
@@ -37,9 +40,12 @@ Search the pages for `TODO(May & May)` to find them all.
    carries his role and his degrees only. Practice focus, bar admissions and
    years in practice are all worth adding. Keep the English and Spanish
    paragraphs in step.
-3. **Add the paralegals' surnames.** The senior paralegals are listed by
-   first name and firm address, as the letterhead lists them. Surnames, and
-   a line of detail for each person, would make the section stronger.
+3. **Read the three blog articles before publishing them.** They are drafts,
+   written out of the practice-area copy, and they carry dates (August and
+   July 2026) that are placeholders — set them to the days you actually
+   publish. Correct anything you would put differently; they go out under the
+   firm's name. Each article also carries a notice saying it is general
+   information rather than advice, and current only as at its date.
 
 Nothing on the site invents a credential, a case result, or a person. The
 three achievements on the record band are stated qualitatively, as given, with
@@ -79,13 +85,26 @@ reads "Contact us on WhatsApp now!" in English and
 "¡Contáctenos por WhatsApp ahora!" in Spanish, and the label stays visible at
 every screen width.
 
-It is drawn in the brand crimson rather than WhatsApp's own green, so it sits
-inside the identity manual's palette; the WhatsApp glyph carries the
-recognition. If you would rather have the familiar green, change `background`
-in the `.whatsapp-bubble` rule in `assets/css/site.css` to `#25D366` and its
-`color` to `#FFFFFF` — nothing else needs to move.
+It is drawn in WhatsApp's own green, `#25D366`, so it is recognised at a
+glance. The text on it is the brand's dark ink rather than white: white on
+that green measures 2:1 and is genuinely hard to read, whereas dark text
+measures 8:1 — and dark-on-green is what WhatsApp itself uses. A thin dark
+hairline keeps the pill defined against the cream page ground, which the green
+alone does not separate from. All of that lives in the `.whatsapp-bubble` rule
+in `assets/css/site.css`.
 
 WhatsApp also appears in the "Reach us directly" card on `contact.html`.
+
+## Adding a blog article
+
+Copy an existing `blog-<slug>.html`, rename it, and change the words. Then add
+it to `blog.html`'s card list and to `sitemap.xml`. Each article page carries
+its own category, date, headline and standfirst in the masthead, and a
+"Related reading" strip at the foot that links the others — update those links
+in the files you touch so nothing points at a missing article.
+
+Articles are ordinary pages, so the bilingual rule below applies to them too:
+write both halves.
 
 ## Editing the content
 
@@ -152,9 +171,16 @@ search for `www.mayandmay-law.com` and update it.
 
 ## Checks this build passes
 
-- `npx html-validate *.html` — clean on all seven pages
+- `npx html-validate *.html` — clean on all twelve pages
 - Every internal link and asset reference resolves
 - No horizontal scrolling at 390px or 1440px, on any page, in either language
 - Every text/background pair meets WCAG AA contrast
 - The language switch, the mobile menu and the scroll reveals were exercised
   in a real browser on every page at both widths
+
+## A note on the navigation
+
+Seven items is as many as the header bar holds. It collapses to the hamburger
+drawer below 1180px — if you add an eighth item, either shorten some labels or
+raise that breakpoint, which appears once in `assets/css/site.css` and once in
+`assets/js/site.js` (they must match).

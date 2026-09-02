@@ -33,6 +33,13 @@ tokens".
 All text on the site clears WCAG AA contrast (4.5:1 for body, 3:1 for large
 headings) on every ground it appears on, in both languages.
 
+**The one deliberate exception to the palette** is the WhatsApp bubble, which
+uses WhatsApp's own `#25D366`. A third-party affordance is recognised by its
+platform colour, and losing that recognition costs more than the consistency
+gains; the manual's palette rule is about the firm's own mark, which the
+bubble does not carry. Its text is the brand's dark ink, which also keeps it
+at 8:1.
+
 ## Typography
 
 The manual names Garet, Slate Pro and Californian FB. None is licensed for
