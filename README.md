@@ -67,9 +67,10 @@ direct line (502-229-7806) and the second Miami line (305-675-6420). Only the
 727 number appears anywhere on the site. To change any of this, search the
 pages for `727`, for `maylaw-firm.com`, or for the street address.
 
-The identity manual's business card carries an older Doral address —
-2656 NW 97th Ave., 33172. The site uses the letterhead's 8200 NW 41st St.
-If the older one is still current, that is the one to change.
+The identity manual's business card carries an older Doral address,
+2656 NW 97th Ave., 33172. The firm has confirmed that the letterhead's
+8200 NW 41st Street, Suite 470 is the current one, and that is what the site
+and the structured data use.
 
 ## The WhatsApp bubble
 
