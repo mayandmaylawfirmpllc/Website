@@ -1,0 +1,120 @@
+/* ==========================================================================
+   May & May Law Firm PLLC — Brand tokens
+   --------------------------------------------------------------------------
+   Derived from "Manual de identidad — May & May Law Firm".
+
+   The four values marked ★ are the brand's chromatic palette exactly as the
+   manual specifies them. Everything else in this file is a tint or shade of
+   those four, added only where a usable interface needs one (hover states,
+   hairlines, body-copy greys) — the manual's own rule, "usar los colores de
+   la paleta", is respected: no colour outside this family appears anywhere
+   on the site.
+
+     ★ #702732  burgundy   — primary brand colour
+     ★ #A3222F  crimson    — accent, and the logo's ampersand
+     ★ #EFEBE6  stone      — light neutral
+     ★ #FCF7F2  cream      — off-white, the page ground
+
+   Typefaces. The manual specifies Garet, Slate Pro and Californian FB, none
+   of which is licensed for web delivery. Each is substituted with its closest
+   open equivalent, so the printed and digital identities stay in step:
+
+     Garet regular  → Jost             (geometric sans, same skeleton)
+     Slate Pro      → Source Sans 3    (humanist sans, same proportions)
+     Californian FB → Sorts Mill Goudy (drawn from Goudy's Californian)
+
+   If the firm licenses the real faces for web use, change the three font
+   stacks below and nothing else needs to move.
+   ========================================================================== */
+
+:root {
+  /* --- Brand palette ----------------------------------------------------- */
+  --c-burgundy-900: #45161E; /* shade of #702732 — deepest grounds */
+  --c-burgundy-800: #5A1F27; /* shade of #702732 */
+  --c-burgundy-700: #702732; /* ★ primary brand burgundy */
+  --c-burgundy-600: #8A3040; /* tint of #702732 — hover */
+
+  --c-crimson-700:  #821B25; /* shade of #A3222F — small text on stone */
+  --c-crimson-500:  #A3222F; /* ★ brand crimson — accent and fills */
+  --c-crimson-200:  #E8BEC2; /* tint of #A3222F — accent on dark grounds */
+
+  --c-stone-200:    #EFEBE6; /* ★ brand light neutral */
+  --c-stone-100:    #F7F2ED; /* between stone and cream */
+  --c-cream:        #FCF7F2; /* ★ brand off-white — page ground */
+  --c-surface:      #FFFFFF;
+
+  --c-line:         #E4DBD4; /* hairline, from the stone family */
+  --c-line-strong:  #D6C4C2; /* hairline with a hint of crimson */
+
+  /* --- Text -------------------------------------------------------------- */
+  --c-text:         #2A1F21; /* warm near-black; 15:1 on cream */
+  --c-text-muted:   #63535A; /* warm grey; 6:1 on every light ground */
+  --c-text-invert:  #FCF7F2; /* the brand cream doubles as reversed text */
+  --c-text-invert-muted: rgba(252, 247, 242, .82);
+
+  /* --- Role tokens -------------------------------------------------------
+     These say what a colour is *for* rather than what it is, which is what
+     lets a dark section re-point them in one place (see site.css §4) without
+     dragging the accent *fills* along with the accent *text*. */
+  --c-accent-text:  var(--c-crimson-500); /* kickers, eyebrow labels, numerals */
+  --c-link:         var(--c-burgundy-600); /* inline links */
+
+  /* --- Typography -------------------------------------------------------- */
+  --font-display: "Jost", "Century Gothic", "Futura", "Trebuchet MS",
+                  system-ui, sans-serif;                    /* ~ Garet */
+  --font-sans:    "Source Sans 3", -apple-system, BlinkMacSystemFont,
+                  "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* ~ Slate Pro */
+  --font-serif:   "Sorts Mill Goudy", "Californian FB", "Iowan Old Style",
+                  Georgia, "Times New Roman", serif;         /* ~ Californian FB */
+
+  --fs-display:  clamp(2.5rem, 1.3rem + 3.7vw, 4.4rem);
+  --fs-h1:       clamp(2rem, 1.35rem + 2.2vw, 3.15rem);
+  --fs-h2:       clamp(1.65rem, 1.2rem + 1.5vw, 2.4rem);
+  --fs-h3:       clamp(1.2rem, 1.08rem + .48vw, 1.44rem);
+  --fs-lead:     clamp(1.06rem, 1rem + .35vw, 1.24rem);
+  --fs-body:     1rem;
+  --fs-small:    .93rem;
+  --fs-kicker:   .75rem;
+
+  --lh-tight:    1.12;
+  --lh-heading:  1.2;
+  --lh-body:     1.68;
+
+  --ls-kicker:   .18em; /* the manual letterspaces every caps line heavily */
+  --ls-display:  -0.005em;
+
+  /* --- Space & rhythm ---------------------------------------------------- */
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  --section-y:  clamp(3.5rem, 2rem + 5vw, 6.5rem);
+  --gutter:     clamp(1.15rem, .6rem + 2.2vw, 2.5rem);
+  --measure:    68ch;
+  --container:  1200px;
+  --container-narrow: 860px;
+
+  /* --- Surfaces & motion ------------------------------------------------- */
+  --radius-sm: 2px;
+  --radius:    3px;   /* the identity is squared off; keep corners tight */
+  --radius-lg: 5px;
+
+  --shadow-sm: 0 1px 2px rgba(69, 22, 30, .06);
+  --shadow:    0 8px 24px -12px rgba(69, 22, 30, .18);
+  --shadow-lg: 0 24px 60px -28px rgba(69, 22, 30, .34);
+
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --dur:  .28s;
+
+  --header-h: 74px;
+}
+
+@media (max-width: 900px) {
+  :root { --header-h: 64px; }
+}

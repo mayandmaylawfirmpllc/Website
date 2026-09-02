@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img"
+     aria-label="May &amp; May Law Firm">
+  <title>May &amp; May Law Firm</title>
+  <g transform="translate(24 34) scale(0.82)" fill="#702732" fill-rule="evenodd">
+    <path d="M0 0 L8.49 0.24 L49.65 62.38 L91.27 0.12 L102.32 0 L53.16 72.09 L45.76 71.85 L8.74 16.26 L8.74 100 L0 100 L0 0.12 Z"/>
+    <path d="M59.23 71.97 L98.19 14.68 L107.41 0.24 L110.45 0 L110.45 100 L101.47 100 L101.95 24.39 L70.52 71.85 L59.23 72.09 Z"/>
+  </g>
+  <g font-family="'Century Gothic', 'Futura', 'Trebuchet MS', sans-serif">
+    <text x="146" y="88" font-size="52" letter-spacing="2.2" fill="#702732">MAY</text>
+    <text x="272" y="90" font-size="58" fill="#A3222F"
+          font-family="Georgia, 'Times New Roman', serif" font-style="italic">&amp;</text>
+    <text x="316" y="88" font-size="52" letter-spacing="2.2" fill="#702732">MAY</text>
+    <text x="222" y="115" font-size="15" letter-spacing="10" fill="#A3222F">LAW FIRM</text>
+  </g>
+</svg>

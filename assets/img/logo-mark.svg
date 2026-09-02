@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.45 100.0" role="img"
+     aria-label="May &amp; May Law Firm">
+  <title>May &amp; May Law Firm</title>
+  <!-- Isotipo, traced from the brand asset supplied with the identity manual.
+       Colour is a palette colour only; do not recolour, rotate or add effects. -->
+  <g fill="#702732" fill-rule="evenodd">
+    <path d="M0 0 L8.49 0.24 L49.65 62.38 L91.27 0.12 L102.32 0 L53.16 72.09 L45.76 71.85 L8.74 16.26 L8.74 100 L0 100 L0 0.12 Z"/>
+    <path d="M59.23 71.97 L98.19 14.68 L107.41 0.24 L110.45 0 L110.45 100 L101.47 100 L101.95 24.39 L70.52 71.85 L59.23 72.09 Z"/>
+  </g>
+</svg>
