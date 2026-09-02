@@ -33,16 +33,11 @@ Search the pages for `TODO(May & May)` to find them all.
    action with a form service (Formspree, Netlify Forms, Basin) or your
    host's own handler. The fields post as `name`, `phone`, `email`,
    `preferred_language`, `matter`, `office`, `detained`, `message`.
-2. **Confirm the Bradenton postal code.** The letterhead reads
-   `1201 Sixth Avenue West, Bradenton, Florida 32405`, transcribed here as
-   written — but 32405 is a Panama City code and Bradenton uses 34205. It
-   appears in the office card on `contact.html` and `index.html` and in the
-   footer of every page.
-3. **Fill out Bill May's biography.** His card on `attorneys.html` currently
+2. **Fill out Bill May's biography.** His card on `attorneys.html` currently
    carries his role and his degrees only. Practice focus, bar admissions and
    years in practice are all worth adding. Keep the English and Spanish
    paragraphs in step.
-4. **Add the paralegals' surnames.** The senior paralegals are listed by
+3. **Add the paralegals' surnames.** The senior paralegals are listed by
    first name and firm address, as the letterhead lists them. Surnames, and
    a line of detail for each person, would make the section stronger.
 
@@ -58,7 +53,7 @@ in the footer of every page.
 | Firm number — voice, SMS and WhatsApp | (727) 269-3797 | The firm |
 | General email | info@maylaw-firm.com | The firm |
 | Miami-Dade (principal) | 8200 NW 41st St., Suite 470, Doral, FL 33166 | Letterhead |
-| Tampa Bay (by appointment) | 1201 Sixth Ave. W., Bradenton, FL 32405 | Letterhead — see item 2 above |
+| Tampa Bay (by appointment) | 1201 Sixth Ave. W., Bradenton, FL 34205 | Letterhead, ZIP corrected by the firm |
 | Indiana (by appointment) | 3815 River Crossing Pkwy., Indianapolis, IN 46240 | Letterhead |
 | Kentucky (by appointment) | 411 West Broadway, Frankfort, KY 40601 | Letterhead |
 
@@ -66,6 +61,10 @@ Two details on the letterhead are deliberately **not** published: Liam's
 direct line (502-229-7806) and the second Miami line (305-675-6420). Only the
 727 number appears anywhere on the site. To change any of this, search the
 pages for `727`, for `maylaw-firm.com`, or for the street address.
+
+The letterhead reads 32405 for Bradenton; the firm has corrected that to
+34205, which is the code Bradenton actually uses. Worth fixing on the
+letterhead too.
 
 The identity manual's business card carries an older Doral address,
 2656 NW 97th Ave., 33172. The firm has confirmed that the letterhead's
